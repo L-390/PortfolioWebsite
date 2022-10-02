@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import LinkedinLogo from '../public/LinkedInWhite.png';
-import GithubLogo from '../public/GitHubWhite.png';
+import LinkedinLogo from '../public/Logos/LinkedInWhite.png';
+import GithubLogo from '../public/Logos/GitHubWhite.png';
 
 const Footer = () => {
 	return (
@@ -13,7 +13,7 @@ const Footer = () => {
 					</Link>
 				</li>
 				<li className='hover:cursor-pointer'>
-					<Link href='https://www.linkedin.com/in/liam-wahlstr%C3%B6m-16040a228/'>
+					<Link href='https://github.com/L-390'>
 						<Image src={GithubLogo} alt='GitHub Logo' width='50%' height='50%'/>
 					</Link>
 				</li>

@@ -24,6 +24,8 @@ const Home: NextPage = () => {
 						I work as a Software Developer and am based in Switzerland. 
 						I mostly work with Web applications, and write new or improve existing frontends or backends.
 						I don't exclusively work with web applications and I've also developed machine learning applications, scripts and much more.
+						Next to developing applications, I've also done work within the dev-ops sector, including but not limited to CI/CD Pipelines, 
+						Nginx Servers and Proxies and containerizing applications with Docker.
 						<br/>
 						<br/>
 						Next to being a Software developer, I also do 3D Modelling and texturing. 
