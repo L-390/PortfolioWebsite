@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 			<main>
 				<motion.div className='text-[35rem] text-gray-300 tracking-tighter leading-none'
 					transition={{type: 'spring', stiffness: 100}}
-					whileHover={{letterSpacing: '80px', color: '#000'}}>
+					whileHover={{letterSpacing: '70px', color: '#000'}}>
 					<h1>Hey</h1>
 					<h1>There</h1>
 				</motion.div>

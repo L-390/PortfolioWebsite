@@ -18,7 +18,7 @@ const Footer = () => {
 					</Link>
 				</li>
 			</ul>
-			<p className='text-white text-[0.9rem]'>© Liam Wahlström 2022</p>
+			<p className='text-white text-[0.9rem] font-light'>© Liam Wahlström 2022</p>
 		</div>
 	);
 };
