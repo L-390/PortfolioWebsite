@@ -25,7 +25,6 @@ const Navbar = (props: Props) => {
 				<li className={props.currentPage == 'home' ? 'underline' : ''}><Link className='hover:cursor-pointer' href='/'>Home</Link></li>
 				<li className={props.currentPage == 'stack' ? 'underline' : ''}><Link className='hover:cursor-pointer' href='/stack'>Tech Stack</Link></li>
 				<li className={props.currentPage == 'programming' ? 'underline' : ''}><Link className='hover:cursor-pointer' href='/programming'>Programming</Link></li>
-				<li><Link className='hover:cursor-pointer' href='/#'>3D Modelling</Link></li>
 			</ul>
 		</div>
 		
