@@ -1,4 +1,4 @@
-import SealNRun from '../components/sealNRun';
+import SealNJump from '../components/sealNJump';
 import {useState} from 'react';
 
 const error = () => {
@@ -8,7 +8,12 @@ const error = () => {
 		<>
 			{gameLoaded ?
 				<div>
-					<SealNRun />
+					<div className='w-screen h-screen bg-black flex flex-col justify-center items-center'>
+						<h1 className='text-white text-[3.5rem] mb-12'>Seal n' run</h1>
+						<div className='w-[50%] h-[60%] overflow-hidden bg-gray-700'>
+							<SealNJump />
+						</div>
+					</div>
 				</div>
 				:
 				<div className='bg-black h-screen w-screen flex flex-col items-center justify-center'>
@@ -17,7 +22,7 @@ const error = () => {
 						<h1 className='ml-16 pl-12 border-l-2 border-l-white'>Page not found</h1>
 					</div>
 					<div onClick={() => {setGameLoaded(true);}} className='bg-black hover:transition-all duration-500 hover:bg-[#0c0c0c] border-gray-900 border-2 border-solid mt-8 px-8 py-4 rounded-xl text-[1.8rem] text-gray-400 hover:cursor-pointer'>
-						<h1>Play Seal n run</h1>
+						<h1>Play Seal n Jump</h1>
 					</div>
 				</div>
 			}

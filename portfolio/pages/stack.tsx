@@ -22,7 +22,7 @@ const Home: NextPage = () => {
 					<h1>Tech</h1>
 					<h1>Stack</h1>
 				</motion.div>
-				<div className='pb-12 bg-black text-gray-400'>
+				<div className='pb-12 text-gray-400 bg-black'>
 					<h1 className='pt-8 text-center text-[3rem]'>Stack:</h1>
 					<p className='pb-4 text-center text-[1.3rem]'>Some of the technologies I have experience using and I enjoy working with.</p>
 					<div>
