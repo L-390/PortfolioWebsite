@@ -12,30 +12,29 @@ export const drawSeal = (canvasContext: any, width: number, seal: Seal) => {
 		seal.vY = 0;
 	}
 	else if(seal.sealStatus === 1) {
-		if(seal.sealX <= 500) {
+		if(seal.sealX <= (width-350)/2) {
 			seal.sealX += 5;
 		}
 		else {
 			seal.sealStatus = 2;
 		}
 	}
-	else if(seal.sealStatus === 3)
+	else if(seal.sealStatus === 4 || seal.sealY < 500)
 	{
-		if(seal.vY > 5)
-		{
-			seal.vY -= 1;
-		}
-		else if(seal.vY >= 1) {
-			seal.vY += 1;
+		if(seal.sealY <= 1395) {
+			seal.sealY += 20;
+			seal.sealStatus = 4;
 		}
 		else {
-			seal.vY = 0;
+			seal.sealY = 1395;
 			seal.sealStatus = 2;
 		}
 	}
-
+	else if(seal.sealStatus === 3) {
+		seal.sealY -= 20;
+	}
 	canvasContext.beginPath();
-	canvasContext.rect(seal.sealX, seal.sealY + seal.vY, 150, 200);
+	canvasContext.rect(seal.sealX, seal.sealY, 150, 200);
 	canvasContext.fillStyle = '#ffffff';
 	canvasContext.fill();
 	canvasContext.closePath();

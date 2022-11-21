@@ -6,18 +6,18 @@ const SealNJump = () => {
 	const gameStarted = useRef<boolean>(false);
 	const canvasRef = useRef(null);
 	const seal= useRef<Seal>({sealX: 0, sealY: 0, vY: 0, sealStatus: 0});
-	const [rerender, setRerender] = useState(false);
 
 	useEffect(() => {
 		const canvas = canvasRef.current;
 		const context = canvas.getContext('2d');
-		canvas.style.width='130%';
+		canvas.style.width='1250px';
 		canvas.style.height='100%';
 
 		const interval = setInterval(() => {
-			seal.current = drawSeal(context, canvas.style.width, seal.current);
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			seal.current = drawSeal(context, canvas.width, seal.current);
 			Stone();
-		}, 10);
+		}, 16);
 		return () => clearInterval(interval);
 	});
 
@@ -33,7 +33,8 @@ const SealNJump = () => {
 		{
 			if(gameStarted.current)
 			{
-				seal.current.sealStatus = 3;
+				if(seal.current.sealStatus !== 3 && seal.current.sealStatus !== 4 && seal.current.sealStatus !== 1)
+					seal.current.sealStatus = 3;
 			}
 			else
 			{

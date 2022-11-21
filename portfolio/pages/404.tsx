@@ -10,7 +10,7 @@ const error = () => {
 				<div>
 					<div className='w-screen h-screen bg-black flex flex-col justify-center items-center'>
 						<h1 className='text-white text-[3.5rem] mb-12'>Seal n' run</h1>
-						<div className='w-[50%] h-[60%] overflow-hidden bg-gray-700'>
+						<div className='w-[1050px] h-[700px] overflow-hidden bg-gray-700'>
 							<SealNJump />
 						</div>
 					</div>
