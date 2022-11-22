@@ -5,7 +5,7 @@ import Stone from './sealNJump/stone';
 const SealNJump = () => {
 	const gameStarted = useRef<boolean>(false);
 	const canvasRef = useRef(null);
-	const seal= useRef<Seal>({sealX: 0, sealY: 0, vY: 0, sealStatus: 0});
+	const seal= useRef<Seal>({sealX: 0, sealY: 0, vY: 76.5, sealStatus: 0});
 
 	useEffect(() => {
 		const canvas = canvasRef.current;
