@@ -22,7 +22,7 @@ export const drawSeal = (canvasContext: any, width: number, seal: Seal) => {
 	{
 		if(seal.sealY <= 1395) {
 			seal.sealY = (0.1*Math.round(Math.pow(seal.vY, 2)) + 800);
-			seal.vY -= 3;
+			seal.vY -= 2;
 		}
 		else {
 			seal.sealY = 1395;

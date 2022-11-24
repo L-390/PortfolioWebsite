@@ -1,11 +1,13 @@
-import {useRef, useEffect, useState} from 'react';
+import {useRef, useEffect} from 'react';
 import {Seal, drawSeal} from './sealNJump/seal';
-import Stone from './sealNJump/stone';
+import {getRandom} from '../utilities/functions';
+import {Stone, drawStones} from './sealNJump/stone';
 
 const SealNJump = () => {
 	const gameStarted = useRef<boolean>(false);
 	const canvasRef = useRef(null);
-	const seal= useRef<Seal>({sealX: 0, sealY: 0, vY: 76.5, sealStatus: 0});
+	const seal = useRef<Seal>({sealX: 0, sealY: 0, vY: 76.5, sealStatus: 0});
+	let stones: Stone[] = [];
 
 	useEffect(() => {
 		const canvas = canvasRef.current;
@@ -16,8 +18,20 @@ const SealNJump = () => {
 		const interval = setInterval(() => {
 			context.clearRect(0, 0, canvas.width, canvas.height);
 			seal.current = drawSeal(context, canvas.width, seal.current);
-			Stone();
+			stones = drawStones(context, stones);
 		}, 16);
+		return () => clearInterval(interval);
+	});
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			if(seal.current.sealStatus !== 0 && seal.current.sealStatus !== 1)
+			{
+				const newStone: Stone = {posX: 1500, stoneType: 0};
+				newStone.stoneType = getRandom(0, 3);
+				stones.push(newStone);
+			}
+		}, getRandom(3000, 7000));
 		return () => clearInterval(interval);
 	});
 
