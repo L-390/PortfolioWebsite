@@ -3,20 +3,28 @@ import {useState, useEffect} from 'react';
 
 type Props = {
 	currentPage: string;
+	backgroundBlack?: boolean;
 }
 
 const Navbar = (props: Props) => {
 	const [scroll, setScroll] = useState(false);
 	useEffect(() => {
-		const scrollHandler = () => {
-			setScroll(window.scrollY > 50);
-		};
+		if(props.backgroundBlack === true)
+		{
+			setScroll(true);
+		}
+		else
+		{
+			const scrollHandler = () => {
+				setScroll(window.scrollY > 50);
+			};
 
-		window.addEventListener('scroll', scrollHandler);
+			window.addEventListener('scroll', scrollHandler);
 
-		return () => {
-			window.removeEventListener('scroll', scrollHandler);
-		};
+			return () => {
+				window.removeEventListener('scroll', scrollHandler);
+			};
+		}
 	}, []);
 
 	return (

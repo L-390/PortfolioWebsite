@@ -12,13 +12,14 @@ export type Stone = {
 export const drawStones = (canvasContext: any, stones: Stone[]) => {
 	const newStones: Stone[] = [];
 
-	for(const stone in stones)
+	for(let i = 0; i < stones.length; i++)
 	{
+		const stone = stones[i];
 		if(stone.posX > 0) {
-			stone.posX += 5;
+			stone.posX -= 7;
 
 			canvasContext.beginPath();
-			canvasContext.rect(stone.posX, 1350, 150, 200);
+			canvasContext.rect(stone.posX, 1450, 150, 200);
 			canvasContext.fillStyle = '#ffffff';
 			canvasContext.fill();
 			canvasContext.closePath();
