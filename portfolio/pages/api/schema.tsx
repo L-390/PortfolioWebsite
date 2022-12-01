@@ -15,3 +15,17 @@ const contactSchema = new Schema<IContact>({
 });
 
 export const Contact = models.Contact || model<IContact>('Contact', contactSchema, 'Contact');
+
+interface ILeaderboard {
+    name: string;
+    date: Date;
+    score: number;
+}
+
+const leaderboardSchema = new Schema<ILeaderboard>({
+	name: String,
+	date: {type: Date, default: Date.now},
+	score: Number,
+});
+
+export const Leaderboard = models.Leaderboard || model<ILeaderboard>('Leaderboard', contactSchema, 'Leaderboard');

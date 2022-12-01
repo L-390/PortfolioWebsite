@@ -11,8 +11,8 @@ export const drawSeal = (canvasContext: any, width: number, seal: Seal) => {
 		seal.sealY = 1450;
 	}
 	else if(seal.sealStatus === 1) {
-		if(seal.sealX <= (width-350)/2) {
-			seal.sealX += 7;
+		if(seal.sealX <= (width/2)-400) {
+			seal.sealX += 9;
 		}
 		else {
 			seal.sealStatus = 2;

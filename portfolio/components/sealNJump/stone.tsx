@@ -1,12 +1,8 @@
-export enum StoneTypes {
-	small = 0,
-	medium = 1,
-	large = 2,
-}
-
 export type Stone = {
 	posX: number;
-	stoneType: StoneTypes;
+	stoneType: number;
+	width: number;
+	height: number;
 }
 
 export const drawStones = (canvasContext: any, stones: Stone[]) => {
@@ -15,11 +11,11 @@ export const drawStones = (canvasContext: any, stones: Stone[]) => {
 	for(let i = 0; i < stones.length; i++)
 	{
 		const stone = stones[i];
-		if(stone.posX > 0) {
-			stone.posX -= 7;
+		if(stone.posX > -200) {
+			stone.posX -= 9;
 
 			canvasContext.beginPath();
-			canvasContext.rect(stone.posX, 1450, 150, 200);
+			canvasContext.rect(stone.posX, 1450, stone.width, stone.height);
 			canvasContext.fillStyle = '#ffffff';
 			canvasContext.fill();
 			canvasContext.closePath();

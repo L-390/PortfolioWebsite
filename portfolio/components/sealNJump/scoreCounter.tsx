@@ -1,15 +1,16 @@
-const ScoreCounter = (canvasContext: any, currentScore: number, sealStatus: number) => {
+const scoreCounter = (canvasContext: any, currentScore: number, sealStatus: number) => {
+
+	canvasContext.font = '50px sans';
+	canvasContext.fillText(Math.floor(currentScore).toString(), 1910, 90);
+
 	if(sealStatus === 0 || sealStatus === 1)
 	{
 		return currentScore;
 	}
 
-	canvasContext.font = '50px serif';
-	canvasContext.fillText('Hello world', 50, 90);
+	currentScore += 0.1;
 
-	currentScore += 0.2;
-
-	return 0;
+	return currentScore;
 };
 
-export default ScoreCounter;
+export default scoreCounter;

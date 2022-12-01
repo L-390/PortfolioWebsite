@@ -26,6 +26,7 @@ const AddContactRequest = async(req: any, res: any) => {
 	await data.save((err: any) => {
 		err ? res.status(500).end() : res.status(200).end();
 	});
+	db.close();
 };
 
 export default AddContactRequest;
